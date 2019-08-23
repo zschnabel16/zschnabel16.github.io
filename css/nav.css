@@ -1,0 +1,166 @@
+/*/// Navbar ///*/
+.nav__btn{
+  font-size: 2.4rem;
+  letter-spacing: .1rem;
+  font-weight:200;
+  border: 2px solid #2d3033;
+  border-radius:2px;
+  line-height:0px;
+  padding: 25px 20px!important;
+  text-transform: lowercase!important;
+  margin-top:1rem;
+}
+
+.nav__btn:hover{
+  border-color: #2d3033;}
+
+.home{
+  text-decoration:none;
+  color:inherit;
+}
+@media(min-width:400px){
+  .home{
+    position: relative!important;
+    left: .5em;
+  }
+}
+
+
+
+/************************************************/
+/****************** NAVIGATION ******************/
+/************************************************/
+nav {
+    background: none;
+    color: #bcbabe;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+/*** INPUT ***/
+nav input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+/*** LABEL ***/
+nav label {
+    cursor: pointer;
+    display: block;
+    font:100 2.4rem/1 "Libre Franklin", sans-serif;
+    color:#2d3033!important;
+		letter-spacing: .15em;
+		text-transform: lowercase;
+    padding-left: 0em;
+    padding-top:2em;
+    margin-bottom:2em;
+    text-align: center;
+}
+/* Hamburger Icon */
+#menu-icon,
+#menu-icon:before,
+#menu-icon:after {
+
+    background: #2d3033;
+    border-radius: 0.065em;
+    height: 0.08em!important;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+}
+
+#menu-icon {
+    display: inline-block;
+    margin: .45em 0;
+    max-width: 1.2em;
+    position: relative;
+}
+
+nav label #menu-icon {
+    float: right;
+}
+
+#menu-icon:before,
+#menu-icon:after {
+    content: '';
+    left: 0;
+    position: absolute;
+}
+
+#menu-icon:before {
+    top: -0.4em;
+}
+
+#menu-icon:after {
+    bottom: -0.4em;
+}
+
+/* Close Icon */
+nav input[type=checkbox]:checked + label #menu-icon {
+    background: transparent;
+}
+
+nav input[type=checkbox]:checked + label #menu-icon:before {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+nav input[type=checkbox]:checked + label #menu-icon:after {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+
+/*** MENU ***/
+/* Overlay */
+nav input:checked ~ #overlay {
+    background: #f1f1f2;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    z-index: -1;
+}
+
+/* List */
+nav ul {
+    font-size: 2.4rem;
+    list-style: none;
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+}
+
+nav input:checked ~ ul {
+    margin: 1em;
+    max-height: inherit;
+    opacity: 1;
+}
+
+nav ul > li {
+    margin: 2rem 0;
+		width: auto;
+}
+
+nav ul a {
+    color: #2d3033!important;
+    text-decoration: none;
+		font-weight: 100;
+    letter-spacing: .1rem;
+    text-transform:lowercase;
+}
+
+/* Social Media */
+nav ul#social-media > li {
+    display: inline-block;
+    font-size: 1.5em;
+    margin: 0.5em;
+}
